@@ -1,4 +1,4 @@
-package qa_scooter.praktikum_services;
+package qa_scooter_praktikum_services;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

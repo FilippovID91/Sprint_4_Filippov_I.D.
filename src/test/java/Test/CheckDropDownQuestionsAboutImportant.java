@@ -2,7 +2,7 @@ package Test;
 
 import org.hamcrest.MatcherAssert;
 import org.junit.Test;
-import qa_scooter.praktikum_services.PageQAScooter;
+import qa_scooter_praktikum_services.PageQAScooter;
 
 import static org.hamcrest.CoreMatchers.is;
 

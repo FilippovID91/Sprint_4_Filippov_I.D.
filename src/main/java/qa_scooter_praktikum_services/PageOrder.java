@@ -1,12 +1,9 @@
-package qa_scooter.praktikum_services;
+package qa_scooter_praktikum_services;
 
-import org.hamcrest.MatcherAssert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import static org.hamcrest.CoreMatchers.is;
 
 public class PageOrder {
     // конструктор класса
@@ -156,11 +153,6 @@ public class PageOrder {
         return driver.findElement(orderCreateSuccess).getText();
     }
 
-    // метод проверки создания заказа
-    public void checkingOrderCreation() {
-        MatcherAssert.assertThat(getOrderCreationSuccess(), is("Заказ оформлен"));
-    }
-
     // метод создания нового заказа
     public void newOrder(String firstName, String lastName, String addresses, String phone, String comment) {
         setFirstName(firstName);
@@ -184,6 +176,5 @@ public class PageOrder {
         waitForLoadOrderConfirmation();
         clickOrderCreateButton();
         waitForLoadOrderCreateSuccess();
-        checkingOrderCreation();
     }
 }

@@ -1,10 +1,12 @@
 package Test;
 
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import qa_scooter.praktikum_services.PageOrder;
-import qa_scooter.praktikum_services.PageQAScooter;
+import qa_scooter_praktikum_services.PageOrder;
+import qa_scooter_praktikum_services.PageQAScooter;
 
 @RunWith(Parameterized.class)
 public class CheckCreateOrder extends TestBase {
@@ -45,6 +47,8 @@ public class CheckCreateOrder extends TestBase {
         objPageOrder.waitForLoadOrderWhoseScooter();
         // создание нового заказа со значениями метода getOrderValues
         objPageOrder.newOrder(firstName, lastName, addresses, phone, comment);
+        // проверка создания заказа
+        MatcherAssert.assertThat(objPageOrder.getOrderCreationSuccess(), CoreMatchers.is("Заказ оформлен"));
     }
 
     @Test
@@ -64,5 +68,7 @@ public class CheckCreateOrder extends TestBase {
         objPageOrder.waitForLoadOrderWhoseScooter();
         // создание нового заказа со значениями метода getOrderValues
         objPageOrder.newOrder(firstName, lastName, addresses, phone, comment);
+        // проверка создания заказа
+        MatcherAssert.assertThat(objPageOrder.getOrderCreationSuccess(), CoreMatchers.is("Заказ оформлен"));
     }
 }
